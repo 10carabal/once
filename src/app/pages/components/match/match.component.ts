@@ -7,4 +7,4 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './match.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MatchComponent { }
+export default class  MatchComponent { }

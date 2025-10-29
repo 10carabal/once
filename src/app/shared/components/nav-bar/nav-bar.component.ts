@@ -1,10 +1,23 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, inject, OnInit } from '@angular/core';
+import { Route, RouterModule } from '@angular/router';
+import { NavService } from './navService';
 
 @Component({
   selector: 'app-nav-bar',
-  imports: [],
+  imports: [CommonModule, RouterModule],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NavBarComponent { }
+export class NavBarComponent implements OnInit {
+    private navService = inject(NavService);
+    routes: Route[] = [];
+
+    ngOnInit() {
+        this.routes = this.getRoutes();
+    }
+
+    private getRoutes(): Route[] {
+        return this.navService.getNavigationRoutes();
+    }
+}

@@ -7,4 +7,4 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './history.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HistoryComponent { }
+export default class HistoryComponent { }
